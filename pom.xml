@@ -9,8 +9,11 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>show-mouse-position</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://github.com/qiaotaizi/show-mouse-position</url>
+  <description>一条鼠标点击位置记录程序</description>
+  <developers>
+    <developer>zhiheng.jiang</developer>
+  </developers>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
