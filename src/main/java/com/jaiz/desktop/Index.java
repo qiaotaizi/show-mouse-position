@@ -4,7 +4,9 @@ import javafx.application.Application;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -17,14 +19,15 @@ import java.util.List;
 
 public class Index extends Application {
 
+
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
+
         var root=new StackPane();
         var scene=new Scene(root);
         primaryStage.setTitle("show mouse position");
         primaryStage.setScene(scene);
         var screenBound= Screen.getPrimary().getBounds();
-        System.out.printf("height = %s, width = %s%n",screenBound.getHeight(),screenBound.getWidth());
         root.setPrefHeight(screenBound.getHeight());
         root.setPrefWidth(screenBound.getWidth());
         primaryStage.setOpacity(0.6);//透明度控制
@@ -35,7 +38,7 @@ public class Index extends Application {
 
         var style="-fx-font-size: 50;" +
                 "-fx-fill: GRAY";
-        Text quitHintText=new Text("按Command+q以关闭");
+        Text quitHintText=new Text("按Command/Win+Q以关闭");
         Text coordText=new Text("(0,0)");
         quitHintText.setStyle(style);
         coordText.setStyle(style);
@@ -67,6 +70,11 @@ public class Index extends Application {
                 System.out.printf("new Point(%d,%d),%n",(int)p.getX(),(int)p.getY());
             });
         });
+
+        KeyCombination kc_cmd_q = new KeyCodeCombination(KeyCode.Q, KeyCombination.SHORTCUT_DOWN);
+        scene.getAccelerators().put(kc_cmd_q, primaryStage::close);
+
+
 
     }
 }
