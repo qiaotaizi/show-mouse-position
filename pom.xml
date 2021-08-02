@@ -12,7 +12,12 @@
   <url>https://github.com/qiaotaizi/show-mouse-position</url>
   <description>一条鼠标点击位置记录程序</description>
   <developers>
-    <developer>zhiheng.jiang</developer>
+    <developer>
+      <id>zhiheng.jiang</id>
+      <name>姜志恒</name>
+      <email>zhiheng.jiang@foxmail.com</email>
+      <url>https://github.com/qiaotaizi</url>
+    </developer>
   </developers>
 
   <properties>
